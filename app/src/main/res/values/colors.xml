@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Theme Modern Colors -->
+    <color name="primary">#4F46E5</color> <!-- Indigo Accent -->
+    <color name="primary_dark">#3730A3</color>
+    <color name="primary_container">#EEF2FF</color>
+    <color name="on_primary_container">#312E81</color>
+
+    <color name="surface_background">#F8FAFC</color> <!-- Slate 50 background -->
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_stroke">#E2E8F0</color>
+
+    <color name="text_primary">#0F172A</color> <!-- Dark Slate Text -->
+    <color name="text_secondary">#64748B</color>
+
+    <!-- Active State Colors -->
+    <color name="color_active_green">#10B981</color> <!-- Emerald Green -->
+    <color name="color_active_green_bg">#ECFDF5</color>
+
+    <color name="color_active_amber">#F59E0B</color> <!-- Amber Flashlight -->
+    <color name="color_active_amber_bg">#FEF3C7</color>
+
+    <color name="color_active_blue">#3B82F6</color> <!-- Wi-Fi / Bluetooth Blue -->
+    <color name="color_active_blue_bg">#EFF6FF</color>
+
+    <!-- Distinct Feature Card Icon Containers -->
+    <color name="icon_bg_phone">#EEF2FF</color>
+    <color name="icon_color_phone">#4F46E5</color>
+
+    <color name="icon_bg_quran">#CCFBF1</color>
+    <color name="icon_color_quran">#0D9488</color>
+
+    <color name="icon_bg_baro">#FEF3C7</color>
+    <color name="icon_color_baro">#D97706</color>
+
+    <color name="icon_bg_projector">#F3E8FF</color>
+    <color name="icon_color_projector">#9333EA</color>
+
+    <color name="icon_bg_tourguide">#E0F2FE</color>
+    <color name="icon_color_tourguide">#0284C7</color>
+
+    <color name="color_inactive">#94A3B8</color> <!-- Slate 400 -->
+    <color name="color_inactive_bg">#F1F5F9</color>
+
+    <color name="power_on">#10B981</color>
+    <color name="power_off">#EF4444</color>
+    <color name="power_off_bg">#FEF2F2</color>
+</resources>

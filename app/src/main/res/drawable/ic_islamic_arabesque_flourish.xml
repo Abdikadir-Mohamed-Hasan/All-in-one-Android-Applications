@@ -1,0 +1,47 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="36dp"
+    android:viewportWidth="120"
+    android:viewportHeight="36">
+    <!-- Outer vine border -->
+    <path
+        android:strokeColor="#059669"
+        android:strokeWidth="1.5"
+        android:pathData="M2,18 C15,8 25,28 40,18 C55,8 65,28 80,18 C95,8 105,24 118,18" />
+    <!-- Symmetrical botanical palmettes and leaves -->
+    <path
+        android:fillColor="#047857"
+        android:pathData="M18,16 C16,10 24,8 26,14 C24,14 20,15 18,16 Z" />
+    <path
+        android:fillColor="#059669"
+        android:pathData="M18,20 C16,26 24,28 26,22 C24,22 20,21 18,20 Z" />
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M38,18 C35,11 45,9 47,15 C43,16 40,17 38,18 Z" />
+    <path
+        android:fillColor="#059669"
+        android:pathData="M38,18 C35,25 45,27 47,21 C43,20 40,19 38,18 Z" />
+    <path
+        android:fillColor="#047857"
+        android:pathData="M58,16 C56,10 64,8 66,14 C64,14 60,15 58,16 Z" />
+    <path
+        android:fillColor="#059669"
+        android:pathData="M58,20 C56,26 64,28 66,22 C64,22 60,21 58,20 Z" />
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M78,18 C75,11 85,9 87,15 C83,16 80,17 78,18 Z" />
+    <path
+        android:fillColor="#047857"
+        android:pathData="M78,18 C75,25 85,27 87,21 C83,20 80,19 78,18 Z" />
+    <path
+        android:fillColor="#059669"
+        android:pathData="M98,16 C96,10 104,8 106,14 C104,14 100,15 98,16 Z" />
+    <path
+        android:fillColor="#047857"
+        android:pathData="M98,20 C96,26 104,28 106,22 C104,22 100,21 98,20 Z" />
+    <!-- Decorative palmette center leaf -->
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M110,18 C113,13 118,14 116,18 C118,22 113,23 110,18 Z" />
+</vector>
+

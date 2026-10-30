@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">All-in-One Controller</string>
+    <string name="title_assignment_hub">Assignment Hub</string>
+    <string name="subtitle_assignment_hub">Choose what you want to use</string>
+    <string name="status_ready">Ready</string>
+    <string name="status_coming_soon">Coming Soon</string>
+    <string name="back">Back</string>
+
+    <!-- Cards Titles & Descriptions -->
+    <string name="card_phone_title">Phone Controller</string>
+    <string name="card_phone_desc">Control supported phone functions.</string>
+
+    <string name="card_quran_title">Quran App</string>
+    <string name="card_quran_desc">Listen to Somali Quran tafsiir and explore Quran audio.</string>
+
+    <string name="card_baro_title">Baro Dalkaga</string>
+    <string name="card_baro_desc">Learn about your country.</string>
+
+    <string name="card_projector_title">Projector Controller</string>
+    <string name="card_projector_desc">Control your projector using IR Blaster.</string>
+
+    <string name="card_tourguide_title">Somalia Tour Guide</string>
+    <string name="card_tourguide_desc">Explore attractions, beaches, history and nature across Somalia.</string>
+
+    <!-- Assignment 1: Phone Controller Screen -->
+    <string name="title_dashboard">Phone Controller</string>
+    <string name="subtitle_dashboard">Quick toggle device hardware &amp; camera</string>
+    <string name="camera_controller">Camera Controller</string>
+    <string name="camera_status_off">Phone Camera Application</string>
+    <string name="btn_open_camera">Open Camera</string>
+    <string name="flashlight_controller">Flashlight Controller</string>
+    <string name="flashlight_status_off">Flashlight / Torch is OFF</string>
+    <string name="flashlight_status_on">Flashlight / Torch is ON</string>
+    <string name="wifi_controller">Wi-Fi Controller</string>
+    <string name="wifi_status_off">Wi-Fi is Disabled</string>
+    <string name="wifi_status_on">Wi-Fi is Connected / Enabled</string>
+    <string name="bluetooth_controller">Bluetooth Controller</string>
+    <string name="bluetooth_status_off">Bluetooth is Disabled</string>
+    <string name="bluetooth_status_on">Bluetooth is Active / Enabled</string>
+    <string name="bluetooth_unavailable">Bluetooth Unavailable</string>
+
+    <!-- Assignment 2: Quran App Screen -->
+    <string name="quran_app_title">Quran &amp; Tafsiir</string>
+    <string name="quran_app_subtitle">Somali Tafsiir &amp; Audio Recitations</string>
+    <string name="select_sheikh">Select Reciter / Sheikh</string>
+    <string name="select_dars">Select Surah / Dars</string>
+    <string name="audio_player">Audio Player</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+
+    <!-- Assignment 3: Baro Dalkaga Screen -->
+    <string name="baro_dalkaga_title">Baro Dalkaga</string>
+    <string name="baro_dalkaga_subtitle">Discover Somali Geography, History &amp; Regions</string>
+
+    <!-- Assignment 4: Projector Controller Screen -->
+    <string name="title_projector_controller">Projector Controller</string>
+    <string name="projector_subtitle">IR Blaster Signal &amp; Display Controller</string>
+    <string name="projector_status_off">Projector Status: STANDBY / OFF</string>
+    <string name="projector_status_on">Projector Status: POWERED ON</string>
+    <string name="projector_screen_off_title">NO SIGNAL / STANDBY</string>
+    <string name="projector_screen_off_desc">Projector is powered off or waiting for input signal.</string>
+    <string name="projector_screen_on_title">PROJECTOR OUTPUT ACTIVE</string>
+    <string name="projector_screen_on_desc">Displaying computer image output (HDMI 1 - 1080p @ 60Hz).</string>
+    <string name="btn_projector_power">Power ON / OFF</string>
+    <string name="btn_open_projector_controller">Projector Controller</string>
+    <string name="hint_power_button_off">Tap Power Button to Transmit IR Power Signal (ON)</string>
+    <string name="hint_power_button_on">Tap Power Button to Transmit IR Power Signal (OFF)</string>
+    <string name="ir_emitter_status">IR Blaster Hardware Status</string>
+    <string name="ir_frequency_label">IR Signal Frequency: 38 kHz (NEC Protocol)</string>
+    <string name="ir_hardware_ready">IR Blaster Hardware Ready (Consumer IR Emitter Active)</string>
+    <string name="ir_hardware_simulated">Simulated IR Mode (Hardware IR Blaster not detected on this phone)</string>
+
+    <!-- Permissions -->
+    <string name="camera_permission_needed">Camera permission is required to open the camera and use flashlight torch.</string>
+    <string name="bluetooth_permission_needed">Bluetooth permission is required to toggle Bluetooth.</string>
+</resources>

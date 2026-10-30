@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playerMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface_background"
+    tools:context=".features.quran.ui.QuranPlayerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp">
+
+        <!-- Top Header Navigation -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/back"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@color/text_primary" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:layout_toStartOf="@id/cardHeaderLogo"
+                android:layout_toEndOf="@id/btnBack"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvHeaderSurahTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Al-Fatiha (الفاتحة)"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvHeaderSheikhName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="Reciter: Sheikh Dirir"
+                    android:textColor="@color/primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHeaderLogo"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/app_name"
+                    android:padding="4dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/jazeeralogo" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+        <!-- MODERN AUDIO PLAYER CARD -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardAudioPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#0B132B"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#0F766E"
+            app:strokeWidth="1.2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp">
+
+                <!-- Header with Icon and Live Status Pill -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/ivPlayerIcon"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/audio_player"
+                        android:src="@drawable/ic_quran"
+                        app:tint="#14B8A6" />
+
+                    <TextView
+                        android:id="@+id/tvPlaybackStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_status_pill_ready"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="3dp"
+                        android:text="Ready to Stream"
+                        android:textColor="#059669"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <!-- Dars Title & Sheikh Info -->
+                <TextView
+                    android:id="@+id/tvPlayerDarsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center"
+                    android:text="Dars 1: Surah Al-Fatiha (Ayah 1-7)"
+                    android:textColor="#F8FAFC"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvPlayerSheikhName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Sheikh Dirir - Tafsiirka Quraanka Kariimka"
+                    android:textColor="#94A3B8"
+                    android:textSize="12sp" />
+
+                <!-- Progress Seek Bar -->
+                <SeekBar
+                    android:id="@+id/seekBarPlayback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressTint="#0D9488"
+                    android:thumbTint="#14B8A6" />
+
+                <!-- Time indicator -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="4dp">
+
+                    <TextView
+                        android:id="@+id/tvCurrentTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="00:00"
+                        android:textColor="#94A3B8"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tvTotalDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="00:00"
+                        android:textColor="#94A3B8"
+                        android:textSize="11sp" />
+                </RelativeLayout>
+
+                <!-- Interactive Media Controls Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <!-- Repeat / Loop Toggle -->
+                    <ImageButton
+                        android:id="@+id/btnLoop"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Loop"
+                        android:src="@drawable/ic_repeat"
+                        app:tint="#94A3B8" />
+
+                    <!-- Rewind 10 Seconds -->
+                    <ImageButton
+                        android:id="@+id/btnRewind10"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="4dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Rewind 10s"
+                        android:src="@drawable/ic_replay_10"
+                        app:tint="#CBD5E1" />
+
+                    <!-- Previous Track / Surah -->
+                    <ImageButton
+                        android:id="@+id/btnPrevious"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="4dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Previous"
+                        android:src="@drawable/ic_skip_previous"
+                        app:tint="#F8FAFC" />
+
+                    <!-- Main Play / Pause FAB -->
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btnPlayPause"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:contentDescription="@string/play"
+                        android:src="@drawable/ic_play"
+                        app:backgroundTint="#0D9488"
+                        app:elevation="4dp"
+                        app:fabSize="normal"
+                        app:tint="@color/white" />
+
+                    <!-- Next Track / Surah -->
+                    <ImageButton
+                        android:id="@+id/btnNext"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Next"
+                        android:src="@drawable/ic_skip_next"
+                        app:tint="#F8FAFC" />
+
+                    <!-- Forward 10 Seconds -->
+                    <ImageButton
+                        android:id="@+id/btnForward10"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Forward 10s"
+                        android:src="@drawable/ic_forward_10"
+                        app:tint="#CBD5E1" />
+
+                    <!-- Playback Speed Pill Button -->
+                    <TextView
+                        android:id="@+id/btnSpeed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_status_pill_ready"
+                        android:gravity="center"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp"
+                        android:text="1.0x"
+                        android:textColor="#059669"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- SUBTLE ZOOM CONTROLS ROW -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnFontSizeMinus"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Decrease font size"
+                    android:src="@drawable/ic_text_decrease"
+                    app:tint="@color/text_secondary" />
+
+                <ImageButton
+                    android:id="@+id/btnFontSizePlus"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="4dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Increase font size"
+                    android:src="@drawable/ic_text_increase"
+                    app:tint="@color/text_secondary" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- ELEGANT LIGHT MUSHAF PAGE CARD -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollQuranText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="18dp">
+
+                    <!-- SURAH HEADER FRAME USING USER'S IMAGE -->
+                    <FrameLayout
+                        android:id="@+id/layoutSurahHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <ImageView
+                            android:id="@+id/ivSurahHeaderFrame"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="Surah Header Frame"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/surah_header_frame" />
+
+                        <TextView
+                            android:id="@+id/tvSurahHeaderArabic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/quran_font"
+                            android:gravity="center"
+                            android:paddingHorizontal="12dp"
+                            android:text="سُورَةُ الفَاتِحَةِ"
+                            android:textColor="#0F172A"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+
+                    <!-- DEDICATED CENTERED BISMILLAH TITLE (NOT A VERSE) -->
+                    <TextView
+                        android:id="@+id/tvBismillah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="14dp"
+                        android:fontFamily="@font/quran_font"
+                        android:gravity="center"
+                        android:text="بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ"
+                        android:textColor="#0F172A"
+                        android:textSize="23sp"
+                        android:textStyle="bold" />
+
+                    <!-- AUTHENTIC CONTINUOUS LIGHT QURAN SCRIPT -->
+                    <TextView
+                        android:id="@+id/tvFullQuranText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quran_font"
+                        android:gravity="center"
+                        android:lineSpacingExtra="16dp"
+                        android:lineSpacingMultiplier="1.5"
+                        android:textColor="#0F172A"
+                        android:textDirection="rtl"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <!-- INTERACTIVE AYAH QUICK ACTION BOTTOM CARD (LIGHT THEME) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardAyahDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="12dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="8dp"
+        app:strokeColor="#0D9488"
+        app:strokeWidth="1.5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Card Top Bar: Ayah Title & Close Button -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/tvSelectedAyahBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_status_pill_ready"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp"
+                    android:text="Ayah 1 Selected"
+                    android:textColor="#059669"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/btnCloseAyahDetail"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Close"
+                    android:src="@drawable/ic_power"
+                    app:tint="@color/text_secondary" />
+            </RelativeLayout>
+
+            <!-- Arabic Ayah Text in Quran Font -->
+            <TextView
+                android:id="@+id/tvSelectedAyahArabic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quran_font"
+                android:gravity="end"
+                android:lineSpacingExtra="8dp"
+                android:textColor="#0F172A"
+                android:textDirection="rtl"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Somali Tafsiir / Meaning Text -->
+            <TextView
+                android:id="@+id/tvSelectedAyahSomali"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="#047857"
+                android:textSize="13sp" />
+
+            <!-- Action Buttons Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCopyAyah"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:paddingHorizontal="12dp"
+                    android:text="Copy"
+                    android:textColor="#0F172A"
+                    android:textSize="12sp"
+                    app:icon="@drawable/ic_copy"
+                    app:iconSize="14dp"
+                    app:iconTint="#0D9488"
+                    app:strokeColor="#0D9488" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnShareAyah"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="8dp"
+                    android:paddingHorizontal="12dp"
+                    android:text="Share"
+                    android:textColor="#0F172A"
+                    android:textSize="12sp"
+                    app:icon="@drawable/ic_share"
+                    app:iconSize="14dp"
+                    app:iconTint="#0D9488"
+                    app:strokeColor="#0D9488" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBookmarkAyah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="#0D9488"
+                    android:paddingHorizontal="12dp"
+                    android:text="Bookmark"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    app:icon="@drawable/ic_bookmark"
+                    app:iconSize="14dp"
+                    app:iconTint="#FFFFFF" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

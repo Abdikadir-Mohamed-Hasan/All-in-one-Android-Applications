@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardAttractionItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="7dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:stateListAnimator="@animator/card_click_animator"
+    app:cardBackgroundColor="@color/card_background"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/card_stroke"
+    app:strokeWidth="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="14dp">
+
+        <!-- Thumbnail Image Container with Rounded Corners -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardThumbContainer"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="0.5dp">
+
+            <ImageView
+                android:id="@+id/ivAttractionThumb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Attraction Thumbnail"
+                android:scaleType="centerCrop"
+                android:src="@drawable/liido_beach" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Information Column -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@id/imgChevronAttraction"
+            android:layout_toEndOf="@id/cardThumbContainer"
+            android:orientation="vertical">
+
+            <!-- Category Badge -->
+            <TextView
+                android:id="@+id/tvAttractionBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tag_pill"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:text="Beach"
+                android:textColor="#059669"
+                android:textSize="10.5sp"
+                android:textStyle="bold" />
+
+            <!-- Attraction Title -->
+            <TextView
+                android:id="@+id/tvAttractionName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Liido Beach"
+                android:textColor="@color/text_primary"
+                android:textSize="16.5sp"
+                android:textStyle="bold" />
+
+            <!-- Location with Location Pin Vector Icon -->
+            <TextView
+                android:id="@+id/tvAttractionLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:drawableStart="@drawable/ic_location_pin"
+                android:drawablePadding="4dp"
+                android:drawableTint="@color/text_secondary"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="Mogadishu, Somalia"
+                android:textColor="@color/text_secondary"
+                android:textSize="12.5sp" />
+
+        </LinearLayout>
+
+        <!-- Chevron Right Navigation Pill -->
+        <ImageView
+            android:id="@+id/imgChevronAttraction"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_status_pill_ready"
+            android:contentDescription="View Details"
+            android:padding="6dp"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="@color/color_active_green" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

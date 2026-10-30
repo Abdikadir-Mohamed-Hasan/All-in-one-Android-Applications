@@ -1,0 +1,17 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+  <!-- Somali Light Blue Background Flag Field -->
+  <path
+      android:fillColor="#4189DD"
+      android:pathData="M0,2h24v20H0z" />
+
+  <!-- Centered White Five-Pointed Star -->
+  <path
+      android:fillColor="#FFFFFF"
+      android:pathData="M12,5.2l1.92,3.89 4.29,0.62 -3.11,3.03 0.73,4.27 -3.83,-2.02 -3.83,2.02 0.73,-4.27 -3.11,-3.03 4.29,-0.62z" />
+
+</vector>
